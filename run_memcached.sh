@@ -1,0 +1,1 @@
+docker run --publish 11211:11211 --name my-memcache -d memcached memcached -m 64
