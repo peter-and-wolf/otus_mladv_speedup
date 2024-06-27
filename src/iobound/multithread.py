@@ -18,7 +18,7 @@ def main(host: str = 'localhost', port: int = 8000) -> None:
   with requests.Session() as session:
     total = int(session.get(f'{url}/total').json()['total'])
 
-    with ThreadPoolExecutor(max_workers=None) as pool:
+    with ThreadPoolExecutor(max_workers=8) as pool:
       
       futures = (pool.submit(fetch_data, session, f'{url}/text/{index}') for index in range(total))
 

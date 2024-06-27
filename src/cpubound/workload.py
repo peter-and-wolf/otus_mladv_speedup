@@ -12,7 +12,7 @@ regexp = re.compile(r'\w+')
 morph = MorphAnalyzer()
 
 
-# @lru_cache(maxsize=None)
+@lru_cache(maxsize=None)
 def get_normal_form(word: str) -> str:
   return morph.parse(word)[0].normal_form
 
